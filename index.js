@@ -173,7 +173,7 @@ class CountDown extends React.Component {
       <View style={{justifyContent: 'center', alignItems: 'center'}}>
         <Text style={[
           styles.separatorTxt,
-          {fontSize: size * 1.2},
+          {fontSize: size * 1},
           separatorStyle,
         ]}>
           {':'}
@@ -186,7 +186,7 @@ class CountDown extends React.Component {
     const {timeToShow, timeLabels, showSeparator} = this.props;
     const {until} = this.state;
     const {days, hours, minutes, seconds} = this.getTimeLeft();
-    const newTime = sprintf('%02d:%02d:%02d:%02d', days, hours, minutes, seconds).split(':');
+    const newTime = sprintf('%02d:%02d:%02d:%02d', seconds, minutes, hours, days).split(':');
     const Component = this.props.onPress ? TouchableOpacity : View;
 
     return (
